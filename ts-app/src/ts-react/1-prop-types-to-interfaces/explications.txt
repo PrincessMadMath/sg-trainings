@@ -1,0 +1,27 @@
+Avant exercice :
+
+1- "TypeScript, c'est juste de mettre des : après tes variables"
+2- Types des components :
+- Pas besoin de spécifier le type children dans les props.
+ -FC est un alias pour FunctionComponent
+
+
+type FC<P = {}> = FunctionComponent<P>
+
+interface FunctionComponent<P = {}> {
+        (props: PropsWithChildren<P>, context?: any): ReactElement | null;
+        propTypes?: WeakValidationMap<P>;
+        contextTypes?: ValidationMap<any>;
+        defaultProps?: Partial<P>;
+        displayName?: string;
+    }
+
+
+type PropsWithChildren<P> = P & { children?: ReactNode };
+
+3- DefaultProps vs {showDescription = false}
+Recommend leveraging simple JavaScript patterns as they work well with TypeScript's type system
+
+4- JSX.Element vs ReactNode vs ReactElement
+
+

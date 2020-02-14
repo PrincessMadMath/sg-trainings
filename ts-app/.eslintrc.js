@@ -19,7 +19,7 @@ module.exports = {
     },
     rules: {
         "no-debugger": "warn",
-        "no-console": "warn",
+        "no-console": "off",
 
         "react/jsx-no-undef": ["warn", { allowGlobals: true }],
         "react/jsx-filename-extension": [
@@ -73,6 +73,7 @@ module.exports = {
 
             plugins: ["@typescript-eslint"],
             rules: {
+                "no-console": "off",
                 "@typescript-eslint/explicit-function-return-type": "off",
                 "@typescript-eslint/no-use-before-define": [
                     "error",

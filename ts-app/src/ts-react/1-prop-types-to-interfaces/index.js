@@ -1,4 +1,4 @@
-import { Card } from "./card";
+import { Card } from "./solution-card";
 import React from "react";
 
 /*********************************************************************************************************

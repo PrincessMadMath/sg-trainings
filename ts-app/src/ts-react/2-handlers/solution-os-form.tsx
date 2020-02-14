@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FC, FormEvent, useState } from "react";
 
-export const OsForm = () => {
+export const OsForm: FC = () => {
     const [os, setOs] = useState();
 
-    const handleChange = e => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
 
         setOs(value);
     };
 
-    const handleSubmit = e => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         console.log("form submitted");
@@ -17,7 +17,7 @@ export const OsForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {os & os.toUpperCase()}
+            {os && os.toUpperCase()}
             <div className="radio-buttons">
                 Windows
                 <input
@@ -25,6 +25,7 @@ export const OsForm = () => {
                     value="windows"
                     name="platform"
                     type="radio"
+                    defaultChecked
                     onChange={handleChange}
                 />
                 Mac
